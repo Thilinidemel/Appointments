@@ -43,11 +43,6 @@ body{
     margin: 0px 15px 8px 5px;
 }
 
-body .side-navbar ul li{
-  list-style: none;
-}
-
-
 #not-selected{
   color: #FFFFFF;
 }

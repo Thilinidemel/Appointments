@@ -1,10 +1,11 @@
 <?php require_once('consultant_navbar_appointment.php'); ?>
+
 <?php
 require_once('../../config/connection.php');
 session_start();
-if (!(isset($_SESSION['user_name']) && isset($_SESSION['consultant_name']) ))
+if($_SESSION['userlevel']!=1)
 {
-    header("Location:consultant_login.php");
+    header("Location:home.php");
 }
  ?>
 
@@ -36,7 +37,7 @@ if (!(isset($_SESSION['user_name']) && isset($_SESSION['consultant_name']) ))
     <div class="top">
       <span class="material-icons">notifications</span>
       <span class="material-icons">chat_bubble</span>
-      <div class="Loggedin"> Welcome! <?php echo $_SESSION['consultant_name'];?></div>
+      <div class="Loggedin"> Welcome! <?php echo $_SESSION['username'];?></div>
       <span class="material-icons">account_circle</span>
     </div>
   </div>
@@ -49,7 +50,7 @@ if (!(isset($_SESSION['user_name']) && isset($_SESSION['consultant_name']) ))
           Total New Appointments
         </div>
         <div class="box2">
-          <a href="#">View Details</a>
+          <a href="consultant_new_appointments.php">View Details</a>
         </div>
       </div>
       <div class="col">
@@ -58,7 +59,7 @@ if (!(isset($_SESSION['user_name']) && isset($_SESSION['consultant_name']) ))
           Total Approved Appointments
         </div>
         <div class="box2">
-          <a href="#">View Details</a>
+          <a href="consultant_approved_appointments.php">View Details</a>
         </div>
       </div>
     </div>
@@ -69,7 +70,7 @@ if (!(isset($_SESSION['user_name']) && isset($_SESSION['consultant_name']) ))
           Total Cancelled Appointments
         </div>
         <div class="box2">
-          <a href="#">View Details</a>
+          <a href="consultant_cancelled_appointments.php">View Details</a>
         </div>
       </div>
       <div class="col">
@@ -78,7 +79,7 @@ if (!(isset($_SESSION['user_name']) && isset($_SESSION['consultant_name']) ))
           Total Appointments
         </div>
         <div class="box2">
-          <a href="#">View Details</a>
+          <a href="consultant_all_appointments.php">View Details</a>
         </div>
       </div>
     </div>
