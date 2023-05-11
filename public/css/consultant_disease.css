@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.top{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items:space-between;
+  overflow: hidden;
+}
+
+.middle{
+  height: 100%;
+  background: #f4f7fa;
+  margin: 20px;
+  border-radius: 20px;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.tabs{
+  flex:20%;
+  margin: 20px;
+  background: #D7F0ED;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box{
+  width: 100%;
+  height: 50px;
+  background: #308C86;
+}
+
+.box:hover{
+  background: white;
+  color: #308C86;
+}
+
+.box a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.descript{
+  flex:70%;
+  margin: 20px;
+  background: #D7F0ED;
+}
+
+.profile{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  float: right;
+  margin-right: 20px;
+}
+
+abbr{
+  text-decoration: none;
+}
+
+.greet{
+  display: flex;
+  justify-content: space-between;
+}
+
+.greet-text{
+  text-align:center;
+  font-size: 16px;
+  color: black;
+}
+
+.profile .material-icons{
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.empty{
+  flex: 70%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.empty p{
+  text-align: justify;
+  font-size: 20px;
+  color:#000;
+  font-weight:bolder;
+}
