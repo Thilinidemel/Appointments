@@ -41,8 +41,63 @@
       </div>
     </div>
 
+    <div class="board">
+      <div class="">
+        <div class="topic">
+          <h2>Patient List</h2>
+        </div>
+        <div class="mid-bottom">
+            <table align="center">
+              <tr>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>Age</th>
+                <th>Blood Group</th>
+                <th>Diagnosis</th>
+                <th>email</th>
+                <th colspan="2">Action</th>
+              </tr>
+              <?php
+                  $sql="SELECT * FROM patient";
+                  $result=mysqli_query($connection,$sql);
+                  if($result){
+                      while($row=mysqli_fetch_assoc($result)){
+                          $patient_id=$row['patient_id'];
+                          $patient_name=$row['patient_name'];
+                          $age=$row['age'];
+                          $blood_group=$row['blood_group'];
+                          $diagnosis=$row['diagnosis'];
+                          $email=$row['email'];
+                          echo '
+                            <td>'.$patient_id.'</td>
+                            <td>'.$patient_name.'</td>
+                            <td>'.$age.'</td>
+                            <td>'.$blood_group.'</td>
+                            <td>'.$diagnosis.'</td>
+                            <td>'.$email.'</td>
+                            <td>
+                              <button id="btn-view" class="btn">
+                                <a href="consultant_patient_reports_view.php?update-id='.$patient_id.'" class="text-light">
+                                  View
+                                  </a>
+                              </button>
+                              <button id="btn-update" class="btn">
+                                <a href="consultant_patient_prescriptions.php?update-id='.$patient_id.'" class="text-light">
+                                  Pres
+                                </a>
+                              </button>
+                            </td>
+                          </tr>
+                          ';
+                      }
+                  }
+              ?>
+            </table>
+        </div>
+      </div>
+    </div>
+
   </body>
   </html>
 
-  <?php include('consultant_patient_prescriptions.php'); ?>
   <!--<?php require_once('consultant_footer.php'); ?>-->
