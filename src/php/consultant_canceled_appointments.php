@@ -43,7 +43,7 @@ if($_SESSION['userlevel']!=1)
 
   <div class="board">
     <div class="full-box">
-      <h2>New Appointments</h2>
+      <h2>Canceled Appointments</h2>
       <table align="center">
         <tr>
           <th>Appointment ID</th>
@@ -54,7 +54,7 @@ if($_SESSION['userlevel']!=1)
           <th>Action</th>
         </tr>
         <?php
-          $sql="SELECT * FROM `appointments` WHERE `status` = 'Not Updated Yet'";
+          $sql="SELECT * FROM `appointments` WHERE `status` = 'Canceled'";
           $result=mysqli_query($connection,$sql);
           if($result){
             while($row=mysqli_fetch_assoc($result)){
@@ -71,7 +71,7 @@ if($_SESSION['userlevel']!=1)
                 <td>'.$status.'</td>
                 <td>
                   <button id="btn-view" class="btn">
-                    <a href="consultant_new_appointments_view.php?appointment-id='.$appointment_id.'" class="text-light">
+                    <a href="consultant_approved_appointments_view.php?appointment-id='.$appointment_id.'" class="text-light">
                       View
                     </a>
                   </button>
